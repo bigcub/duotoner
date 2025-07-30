@@ -106,6 +106,51 @@ main {
     color: #333;
 }
 
+.preset-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    gap: 8px;
+}
+
+.collapse-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    color: #888;
+    display: flex;
+    align-items: center;
+    margin-top: -2px;
+}
+
+.collapse-btn:hover {
+    color: #555;
+}
+
+.collapse-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.preset-colors.collapsed .collapse-btn svg {
+    transform: rotate(-90deg);
+}
+
+.preset-grid {
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.preset-colors.collapsed .preset-grid {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+}
+
 .preset-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -303,5 +348,18 @@ main {
     
     .preset-grid {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+    
+    /* Auto-collapse presets on mobile */
+    .preset-colors {
+        order: 2;
+    }
+    
+    .custom-colors {
+        order: 1;
+    }
+    
+    .preset-colors:not(.collapsed) .preset-grid {
+        max-height: 500px;
     }
 }

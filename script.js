@@ -12,6 +12,8 @@ class Duotoner {
         this.resetBtn = document.getElementById('resetBtn');
         this.downloadBtn = document.getElementById('downloadBtn');
         this.swapColorsBtn = document.getElementById('swapColorsBtn');
+        this.collapseBtn = document.getElementById('collapseBtn');
+        this.presetColors = document.querySelector('.preset-colors');
         
         this.currentImage = null;
         this.currentPreset = null;
@@ -56,6 +58,13 @@ class Duotoner {
     init() {
         this.setupEventListeners();
         this.createPresets();
+        this.setupMobileDefaults();
+    }
+    
+    setupMobileDefaults() {
+        if (window.innerWidth <= 768) {
+            this.presetColors.classList.add('collapsed');
+        }
     }
     
     setupEventListeners() {
@@ -117,6 +126,17 @@ class Duotoner {
         this.swapColorsBtn.addEventListener('click', () => {
             this.swapColors();
         });
+        
+        // Collapse presets button
+        this.collapseBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.togglePresets();
+        });
+        
+        // Also allow clicking the header to toggle
+        document.getElementById('presetHeader').addEventListener('click', () => {
+            this.togglePresets();
+        });
     }
     
     createPresets() {
@@ -163,6 +183,10 @@ class Duotoner {
         this.currentPreset = null;
         this.updatePresetSelection();
         this.applyDuotone();
+    }
+    
+    togglePresets() {
+        this.presetColors.classList.toggle('collapsed');
     }
     
     loadImage(file) {
