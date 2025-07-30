@@ -141,20 +141,19 @@ main {
 }
 
 .preset-grid {
-    transition: all 0.3s ease;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
     overflow: hidden;
+    max-height: 1000px;
 }
 
 .preset-colors.collapsed .preset-grid {
     max-height: 0;
     opacity: 0;
-    margin-top: 0;
-}
-
-.preset-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .preset-item {
@@ -347,7 +346,8 @@ main {
     }
     
     .preset-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
     }
     
     /* Auto-collapse presets on mobile */
@@ -357,9 +357,5 @@ main {
     
     .custom-colors {
         order: 1;
-    }
-    
-    .preset-colors:not(.collapsed) .preset-grid {
-        max-height: 500px;
     }
 }
