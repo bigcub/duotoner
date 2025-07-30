@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTJG8HEN42"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RTJG8HEN42');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duotoner - Create Beautiful Duotone Images</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Duotoner</h1>
+            <p>Transform your images with beautiful duotone effects</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7,10 12,15 17,10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        <h3>Drop your image here</h3>
+                        <p>or click to browse</p>
+                        <input type="file" id="imageInput" accept="image/*" hidden>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-section" id="controlsSection" style="display: none;">
+                <div class="color-controls">
+                    <div class="preset-colors">
+                        <h3>Presets</h3>
+                        <div class="preset-grid" id="presetGrid"></div>
+                    </div>
+                    
+                    <div class="custom-colors">
+                        <h3>Colours</h3>
+                        <div class="color-inputs">
+                            <div class="color-input">
+                                <label for="shadowColor">Shadow</label>
+                                <input type="color" id="shadowColor" value="#000000">
+                            </div>
+                            <button id="swapColorsBtn" class="swap-btn" title="Swap colors">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 2l4 4-4 4"/>
+                                    <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
+                                    <path d="M7 22l-4-4 4-4"/>
+                                    <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+                                </svg>
+                            </button>
+                            <div class="color-input">
+                                <label for="highlightColor">Highlight</label>
+                                <input type="color" id="highlightColor" value="#ffffff">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="preview-section">
+                    <canvas id="canvas" style="display: none;"></canvas>
+                    <img id="originalImage" style="display: none;">
+                </div>
+
+                <div class="action-buttons">
+                    <button id="resetBtn">Reset</button>
+                    <button id="downloadBtn" class="primary">Download</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
