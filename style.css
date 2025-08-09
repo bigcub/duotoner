@@ -42,6 +42,97 @@ main {
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
+.hero-section {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.hero-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-section > p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.feature {
+    text-align: left;
+    padding: 20px;
+    border-radius: 12px;
+    background: #f8f9fa;
+    border-left: 4px solid #667eea;
+}
+
+.feature h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.feature p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.how-to-use {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.how-to-use h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.how-to-use ol {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-left: 20px;
+}
+
+.how-to-use li {
+    margin-bottom: 12px;
+    color: #555;
+    line-height: 1.5;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .hero-section h2 {
+        font-size: 2rem;
+    }
+    
+    .features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .how-to-use {
+        padding: 20px;
+    }
+}
+
 .upload-section {
     margin-bottom: 40px;
 }

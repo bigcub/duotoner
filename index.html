@@ -40,6 +40,32 @@
     
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Duotoner",
+        "description": "Free online duotone photo editor to create stunning duotone effects with professional two-tone color filters",
+        "url": "https://duotoner.com",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Duotone photo effects",
+            "16 color presets",
+            "Custom color selection",
+            "High quality image export",
+            "Real-time preview"
+        ],
+        "screenshot": "https://duotoner.com/favicon.svg"
+    }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -49,6 +75,36 @@
         </header>
 
         <main>
+            <section class="hero-section">
+                <h2>Free Online Duotone Photo Editor</h2>
+                <p>Create stunning duotone effects with our easy-to-use online editor. Transform your photos with professional two-tone color filters using 16 beautiful presets or custom colors.</p>
+                
+                <div class="features">
+                    <div class="feature">
+                        <h3>Easy to Use</h3>
+                        <p>Simply upload your image and choose from our curated presets or create custom duotone effects.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>16 Beautiful Presets</h3>
+                        <p>Choose from carefully crafted color combinations including vintage, modern, and artistic styles.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>High Quality Output</h3>
+                        <p>Download your transformed images in full resolution, perfect for social media or print.</p>
+                    </div>
+                </div>
+                
+                <div class="how-to-use">
+                    <h3>How to Create Duotone Images</h3>
+                    <ol>
+                        <li>Upload your photo by clicking the upload area below or dragging and dropping</li>
+                        <li>Choose from 16 preset color combinations or select custom shadow and highlight colors</li>
+                        <li>Preview your duotone effect in real-time</li>
+                        <li>Download your transformed image in high quality</li>
+                    </ol>
+                </div>
+            </section>
+
             <div class="upload-section">
                 <div class="upload-area" id="uploadArea">
                     <div class="upload-content">
