@@ -58,13 +58,8 @@ class Duotoner {
     init() {
         this.setupEventListeners();
         this.createPresets();
-        this.setupMobileDefaults();
-    }
-    
-    setupMobileDefaults() {
-        if (window.innerWidth <= 768) {
-            this.presetColors.classList.add('collapsed');
-        }
+        // Select Navy & Cyan as default so the first upload looks good
+        this.selectPreset(2);
     }
     
     setupEventListeners() {
@@ -229,7 +224,9 @@ class Duotoner {
     }
     
     showControls() {
-        this.controlsSection.style.display = 'block';
+        // Force reflow so the CSS transition triggers from the initial state
+        this.controlsSection.offsetHeight;
+        this.controlsSection.classList.add('visible');
     }
     
     hexToRgb(hex) {
@@ -278,11 +275,9 @@ class Duotoner {
         this.currentImage = null;
         this.currentPreset = null;
         this.canvas.style.display = 'none';
-        this.controlsSection.style.display = 'none';
+        this.controlsSection.classList.remove('visible');
         this.imageInput.value = '';
-        this.shadowColorInput.value = '#000000';
-        this.highlightColorInput.value = '#ffffff';
-        this.updatePresetSelection();
+        this.selectPreset(2);
     }
     
     download() {

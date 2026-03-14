@@ -10,7 +10,7 @@
 
       gtag('config', 'G-RTJG8HEN42');
     </script>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duotoner - Create Beautiful Duotone Images Online Free</title>
@@ -18,29 +18,32 @@
     <meta name="keywords" content="duotone, photo editor, image filter, two tone, color effect, online editor, free photo effects, gradient filter, vintage effect">
     <meta name="author" content="Duotoner">
     <meta name="robots" content="index, follow">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://duotoner.com/">
     <meta property="og:title" content="Duotoner - Create Beautiful Duotone Images Online Free">
     <meta property="og:description" content="Transform your photos with professional duotone effects. Upload images and apply stunning two-tone color filters with 16 preset palettes or custom colors.">
     <meta property="og:image" content="https://duotoner.com/favicon.svg">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://duotoner.com/">
     <meta property="twitter:title" content="Duotoner - Create Beautiful Duotone Images Online Free">
     <meta property="twitter:description" content="Transform your photos with professional duotone effects. Upload images and apply stunning two-tone color filters with 16 preset palettes or custom colors.">
     <meta property="twitter:image" content="https://duotoner.com/favicon.svg">
-    
+
     <!-- Additional SEO -->
-    <meta name="theme-color" content="#667eea">
-    <meta name="msapplication-TileColor" content="#667eea">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="msapplication-TileColor" content="#6366f1">
     <link rel="canonical" href="https://duotoner.com/">
-    
+
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    
+
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -71,61 +74,31 @@
     <div class="container">
         <header>
             <h1>Duotoner</h1>
-            <p>Transform your images with beautiful duotone effects</p>
+            <p>Create duotone images in seconds</p>
         </header>
 
         <main>
-            <section class="hero-section">
-                <h2>Free Online Duotone Photo Editor</h2>
-                <p>Create stunning duotone effects with our easy-to-use online editor. Transform your photos with professional two-tone color filters using 16 beautiful presets or custom colors.</p>
-                
-                <div class="features">
-                    <div class="feature">
-                        <h3>Easy to Use</h3>
-                        <p>Simply upload your image and choose from our curated presets or create custom duotone effects.</p>
-                    </div>
-                    <div class="feature">
-                        <h3>16 Beautiful Presets</h3>
-                        <p>Choose from carefully crafted color combinations including vintage, modern, and artistic styles.</p>
-                    </div>
-                    <div class="feature">
-                        <h3>High Quality Output</h3>
-                        <p>Download your transformed images in full resolution, perfect for social media or print.</p>
-                    </div>
-                </div>
-                
-                <div class="how-to-use">
-                    <h3>How to Create Duotone Images</h3>
-                    <ol>
-                        <li>Upload your photo by clicking the upload area below or dragging and dropping</li>
-                        <li>Choose from 16 preset color combinations or select custom shadow and highlight colors</li>
-                        <li>Preview your duotone effect in real-time</li>
-                        <li>Download your transformed image in high quality</li>
-                    </ol>
-                </div>
-            </section>
-
             <div class="upload-section">
                 <div class="upload-area" id="uploadArea">
                     <div class="upload-content">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="upload-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                            <polyline points="7,10 12,15 17,10"/>
-                            <line x1="12" y1="15" x2="12" y2="3"/>
+                            <polyline points="17 8 12 3 7 8"/>
+                            <line x1="12" y1="3" x2="12" y2="15"/>
                         </svg>
-                        <h3>Drop your image here</h3>
-                        <p>or click to browse</p>
+                        <p class="upload-label">Drop your image here or <span class="upload-link">browse</span></p>
+                        <p class="upload-hint">PNG, JPG, or WebP</p>
                         <input type="file" id="imageInput" accept="image/*" hidden>
                     </div>
                 </div>
             </div>
 
-            <div class="controls-section" id="controlsSection" style="display: none;">
+            <div class="controls-section" id="controlsSection">
                 <div class="color-controls">
-                    <div class="preset-colors">
+                    <div class="preset-colors" id="presetColors">
                         <h3 class="preset-header" id="presetHeader">
                             Presets
-                            <button class="collapse-btn" id="collapseBtn">
+                            <button class="collapse-btn" id="collapseBtn" aria-label="Toggle presets">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="6,9 12,15 18,9"></polyline>
                                 </svg>
@@ -133,15 +106,15 @@
                         </h3>
                         <div class="preset-grid" id="presetGrid"></div>
                     </div>
-                    
+
                     <div class="custom-colors">
-                        <h3>Colours</h3>
+                        <h3>Colors</h3>
                         <div class="color-inputs">
                             <div class="color-input">
                                 <label for="shadowColor">Shadow</label>
-                                <input type="color" id="shadowColor" value="#000000">
+                                <input type="color" id="shadowColor" value="#0f172a">
                             </div>
-                            <button id="swapColorsBtn" class="swap-btn" title="Swap colors">
+                            <button id="swapColorsBtn" class="swap-btn" title="Swap colors" aria-label="Swap shadow and highlight colors">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M17 2l4 4-4 4"/>
                                     <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
@@ -151,23 +124,57 @@
                             </button>
                             <div class="color-input">
                                 <label for="highlightColor">Highlight</label>
-                                <input type="color" id="highlightColor" value="#ffffff">
+                                <input type="color" id="highlightColor" value="#06b6d4">
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="preview-section">
-                    <canvas id="canvas" style="display: none;"></canvas>
+                    <canvas id="canvas"></canvas>
                     <img id="originalImage" style="display: none;">
                 </div>
 
                 <div class="action-buttons">
-                    <button id="resetBtn">Reset</button>
-                    <button id="downloadBtn" class="primary">Download</button>
+                    <button id="resetBtn" class="btn btn-ghost">Reset</button>
+                    <button id="downloadBtn" class="btn btn-primary">Download</button>
                 </div>
             </div>
         </main>
+
+        <section class="seo-section">
+            <h2>Free Online Duotone Photo Editor</h2>
+            <p class="seo-intro">Transform any photo into a striking duotone image. Pick from 16 curated presets or dial in your own shadow and highlight colors &mdash; no signup, no watermark.</p>
+
+            <div class="features">
+                <div class="feature">
+                    <h3>Simple and fast</h3>
+                    <p>Upload a photo, pick a preset, and download. The entire process takes seconds, right in your browser.</p>
+                </div>
+                <div class="feature">
+                    <h3>16 curated presets</h3>
+                    <p>Carefully chosen color pairings that range from classic monochrome to bold, modern combinations.</p>
+                </div>
+                <div class="feature">
+                    <h3>Full-resolution export</h3>
+                    <p>Your duotone image downloads at the original resolution &mdash; ready for social media, print, or web.</p>
+                </div>
+            </div>
+
+            <div class="how-to-use">
+                <h3>How to Create Duotone Images</h3>
+                <ol>
+                    <li>Upload your photo by clicking the upload area or dragging and dropping</li>
+                    <li>Choose from 16 preset color combinations or pick custom shadow and highlight colors</li>
+                    <li>Preview your duotone effect in real time</li>
+                    <li>Download your image at full resolution</li>
+                </ol>
+            </div>
+        </section>
+
+        <footer>
+            <p>Duotoner</p>
+        </footer>
     </div>
 
     <script src="script.js"></script>
